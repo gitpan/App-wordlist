@@ -1,0 +1,273 @@
+#!perl
+
+# Note: This script is a CLI interface to Riap function /App/wordlist/wordlist
+# and generated automatically using Dist::Zilla::Plugin::Rinci::ScriptFromFunc version 0.03
+
+our $DATE = '2014-12-04'; # DATE
+our $VERSION = '0.01'; # VERSION
+
+use 5.010001;
+use strict;
+use warnings;
+
+use Perinci::CmdLine::Any -prefer_lite=>1;
+
+Perinci::CmdLine::Any->new(
+    url => "/App/wordlist/wordlist",
+)->run;
+
+# ABSTRACT: Grep words from Games::Word::{Wordlist,Phraselist}::*
+# PODNAME: wordlist
+
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
+
+=head1 VERSION
+
+This document describes version 0.01 of wordlist (from Perl distribution App-wordlist), released on 2014-12-04.
+
+=head1 SYNOPSIS
+
+Usage:
+
+ % wordlist [options] [arg] ...
+
+Examples:
+
+By default print all words from all wordlists:
+
+ % wordlist
+
+Print all words matching /foo/ and /bar/:
+
+ % wordlist
+
+Print all words matching /foo/ or /bar/:
+
+ % wordlist
+
+Select a specific wordlist (multiple -w allowed):
+
+ % wordlist
+
+Filter by regex:
+
+ % wordlist
+
+=head1 OPTIONS
+
+C<*> marks required options.
+
+=over
+
+=item B<--action>=I<s>
+
+Default value:
+
+ "grep"
+
+Valid values:
+
+ ["list_cpan", "list_installed", "install", "uninstall", "grep"]
+
+=item B<--arg-json>=I<s>
+
+See C<--arg>.
+
+=item B<--arg>=I<s@>
+
+Can be specified multiple times.
+
+=item B<--config-path>=I<s>
+
+Set path to configuration file.
+
+Can be specified multiple times.
+
+=item B<--config-profile>=I<s>
+
+Set configuration profile to use.
+
+=item B<--detail>
+
+Display more information when listing modules.
+
+=item B<--format>=I<s>
+
+Set output format.
+
+=item B<--help>, B<-h>, B<-?>
+
+Show help message.
+
+=item B<--json>
+
+Set output format to json.
+
+=item B<--naked-res>
+
+When outputing as JSON, strip result envelope.
+
+By default, when outputing as JSON, the full enveloped result is returned, e.g.:
+
+    [200,"OK",[1,2,3],{"func.extra"=>4}]
+
+The reason is so you can get the status (1st element), status message (2nd
+element) as well as result metadata/extra result (4th element) instead of just
+the result (3rd element). However, sometimes you want just the result, e.g. when
+you want to pipe the result for more post-processing:
+
+    [1,2,3]
+
+In this case, you can use `--naked-res`.
+
+
+=item B<--no-config>
+
+Do not use any configuration file.
+
+=item B<--no-ignore-case>
+
+=item B<--or>
+
+Use OR logic instead of the default AND.
+
+=item B<--version>, B<-v>
+
+Show program version.
+
+=item B<--wordlist-json>=I<s>, B<-w>
+
+Select one or more wordlist modules (JSON-encoded).
+
+See C<--wordlist>.
+
+=item B<--wordlist>=I<s@>
+
+Select one or more wordlist modules.
+
+Can be specified multiple times.
+
+=item B<-I>=I<s>
+
+Install Games::Word::Wordlist::* module.
+
+Valid values:
+
+ ["list_cpan", "list_installed", "install", "uninstall", "grep"]
+
+See C<--action>.
+
+=item B<-l>
+
+List installed Games::Word::Wordlist::* modules.
+
+Valid values:
+
+ ["list_cpan", "list_installed", "install", "uninstall", "grep"]
+
+See C<--action>.
+
+=item B<-L>
+
+List Games::Word::Wordlist::* modules on CPAN.
+
+Valid values:
+
+ ["list_cpan", "list_installed", "install", "uninstall", "grep"]
+
+See C<--action>.
+
+=item B<-U>=I<s>
+
+Uninstall Games::Word::Wordlist::* module.
+
+Valid values:
+
+ ["list_cpan", "list_installed", "install", "uninstall", "grep"]
+
+See C<--action>.
+
+=back
+
+=head1 FILES
+
+B</etc/wordlist.conf>
+
+B<~/wordlist.conf>
+
+=head1 COMPLETION
+
+This script has shell tab completion capability with support for several shells.
+
+=head2 bash
+
+To activate bash completion for this script, put:
+
+ complete -C wordlist wordlist
+
+in your bash startup (e.g. C<~/.bashrc>). Your next shell session will then recognize tab completion for the command. Or, you can also directly execute the line above in your shell to activate immediately.
+
+You can also install L<App::BashCompletionProg> which makes it easy to add completion for Perinci::CmdLine-based scripts. After you install the module and put C<. ~/.bash-complete-prog> (or C<. /etc/bash-complete-prog>), you can just run C<bash-completion-prog> and the C<complete> command will be added to your C<~/.bash-completion-prog>. Your next shell session will then recognize tab completion for the command.
+
+=head2 fish
+
+To activate fish completion for this script, execute:
+
+ begin; set -lx COMP_SHELL fish; set -lx COMP_MODE gen_command; wordlist; end > $HOME/.config/fish/completions/wordlist.fish
+
+Or if you want to install globally, you can instead write the generated script to C</etc/fish/completions/wordlist.fish> or C</usr/share/fish/completions/wordlist.fish>. The exact path might be different on your system. Please check your C<fish_complete_path> variable.
+
+=head2 tcsh
+
+To activate tcsh completion for this script, put:
+
+ complete wordlist 'p/*/`wordlist`/'
+
+in your tcsh startup (e.g. C<~/.tcshrc>). Your next shell session will then recognize tab completion for the command. Or, you can also directly execute the line above in your shell to activate immediately.
+
+=head2 zsh
+
+To activate zsh completion for this script, put:
+
+ _wordlist() { read -l; local cl="$REPLY"; read -ln; local cp="$REPLY"; reply=(`COMP_SHELL=zsh COMP_LINE="$cl" COMP_POINT="$cp" wordlist`) }
+
+ compctl -K _wordlist wordlist
+
+in your zsh startup (e.g. C<~/.zshrc>). Your next shell session will then recognize tab completion for the command. Or, you can also directly execute the line above in your shell to activate immediately.
+
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/App-wordlist>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/perlancar/perl-App-wordlist>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=App-wordlist>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+=head1 AUTHOR
+
+perlancar <perlancar@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by perlancar@cpan.org.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

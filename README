@@ -1,0 +1,109 @@
+NAME
+    App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
+
+VERSION
+    This document describes version 0.01 of App::wordlist (from Perl
+    distribution App-wordlist), released on 2014-12-04.
+
+SYNOPSIS
+    See the included script wordlist.
+
+FUNCTIONS
+  wordlist(%args) -> [status, msg, result, meta]
+    Grep words from Games::Word::{Wordlist,Phraselist}::*.
+
+    Examples:
+
+     wordlist();
+
+    By default print all words from all wordlists.
+
+     wordlist( arg => ["foo", "bar"]);
+
+    Print all words matching /foo/ and /bar/.
+
+     wordlist( arg => ["foo", "bar"], or => 1);
+
+    Print all words matching /foo/ or /bar/.
+
+     wordlist( arg => ["foo"], wordlist => ["KBBI"]);
+
+    Select a specific wordlist (multiple -w allowed).
+
+     wordlist( arg => ["/fof[aeiou]/"]);
+
+    Filter by regex.
+
+    Arguments ('*' denotes required arguments):
+
+    *   action => *str* (default: "grep")
+
+    *   arg => *array*
+
+    *   detail => *bool*
+
+        Display more information when listing modules.
+
+    *   ignore_case => *bool* (default: 1)
+
+    *   or => *bool*
+
+        Use OR logic instead of the default AND.
+
+    *   wordlist => *array*
+
+        Select one or more wordlist modules.
+
+    Return value:
+
+    Returns an enveloped result (an array).
+
+    First element (status) is an integer containing HTTP status code (200
+    means OK, 4xx caller error, 5xx function error). Second element (msg) is
+    a string containing error message, or 'OK' if status is 200. Third
+    element (result) is optional, the actual result. Fourth element (meta)
+    is called result metadata and is optional, a hash that contains extra
+    information.
+
+     (any)
+
+TODO
+    In -l --detail, show summary (extract from POD Name or # ABSTRACT).
+
+    Support Games::Word::Phraselist::*
+
+    Option --random (plus -n) to generate (or n) random word(s).
+
+    Option -v (--invert-match) like grep.
+
+    Implement -n (max result).
+
+SEE ALSO
+    Games::Word::Wordlist
+
+    Games::Word::Phraselist
+
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/App-wordlist>.
+
+SOURCE
+    Source repository is at
+    <https://github.com/perlancar/perl-App-wordlist>.
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    <https://rt.cpan.org/Public/Dist/Display.html?Name=App-wordlist>
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
+
+AUTHOR
+    perlancar <perlancar@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2014 by perlancar@cpan.org.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
