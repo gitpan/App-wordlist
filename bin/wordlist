@@ -4,7 +4,7 @@
 # and generated automatically using Dist::Zilla::Plugin::Rinci::ScriptFromFunc version 0.03
 
 our $DATE = '2014-12-04'; # DATE
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 use 5.010001;
 use strict;
@@ -31,7 +31,7 @@ wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.01 of wordlist (from Perl distribution App-wordlist), released on 2014-12-04.
+This document describes version 0.02 of wordlist (from Perl distribution App-wordlist), released on 2014-12-04.
 
 =head1 SYNOPSIS
 
@@ -165,9 +165,9 @@ Valid values:
 
 See C<--action>.
 
-=item B<-l>
+=item B<-L>
 
-List installed Games::Word::Wordlist::* modules.
+List Games::Word::Wordlist::* modules on CPAN.
 
 Valid values:
 
@@ -175,9 +175,9 @@ Valid values:
 
 See C<--action>.
 
-=item B<-L>
+=item B<-l>
 
-List Games::Word::Wordlist::* modules on CPAN.
+List installed Games::Word::Wordlist::* modules.
 
 Valid values:
 

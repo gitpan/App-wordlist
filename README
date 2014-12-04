@@ -2,7 +2,7 @@ NAME
     App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 VERSION
-    This document describes version 0.01 of App::wordlist (from Perl
+    This document describes version 0.02 of App::wordlist (from Perl
     distribution App-wordlist), released on 2014-12-04.
 
 SYNOPSIS

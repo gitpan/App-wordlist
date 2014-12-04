@@ -29,6 +29,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Complete::Util" : "0",
             "Module::List" : "0",
             "Perinci::CmdLine::Any" : "0.06",
             "Rinci" : "v1.1.69",
@@ -56,7 +57,7 @@
          "web" : "https://github.com/perlancar/perl-App-wordlist"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018002"

@@ -1,7 +1,7 @@
 package App::wordlist;
 
 our $DATE = '2014-12-04'; # DATE
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 use 5.010001;
 use strict;
@@ -53,6 +53,16 @@ $SPEC{wordlist} = {
             schema => ['array*' => of => 'str*'],
             summary => 'Select one or more wordlist modules',
             cmdline_aliases => {w=>{}},
+            element_completion => sub {
+                require Complete::Util;
+
+                my %args = @_;
+                Complete::Util::complete_array_elem(
+                    word  => $args{word},
+                    array => [sort keys %{ _list_installed() }],
+                    ci    => 1,
+                );
+            },
         },
         or => {
             summary => 'Use OR logic instead of the default AND',
@@ -223,7 +233,7 @@ App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.01 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-04.
+This document describes version 0.02 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-04.
 
 =head1 SYNOPSIS
 
