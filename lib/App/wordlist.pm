@@ -1,7 +1,7 @@
 package App::wordlist;
 
-our $DATE = '2014-12-04'; # DATE
-our $VERSION = '0.02'; # VERSION
+our $DATE = '2014-12-05'; # DATE
+our $VERSION = '0.03'; # VERSION
 
 use 5.010001;
 use strict;
@@ -122,6 +122,7 @@ $SPEC{wordlist} = {
             summary => 'Filter by regex',
         },
     ],
+    'cmdline.default_format' => 'text-simple',
 };
 sub wordlist {
     my %args = @_;
@@ -197,7 +198,7 @@ sub wordlist {
                 push @res, $_;
             }
         }
-        [200, "OK", \@res];
+        [200, "OK", \@res, {'cmdline.default_format' => 'text'}];
 
     } elsif ($action eq 'list_cpan') {
 
@@ -233,7 +234,7 @@ App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.02 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-04.
+This document describes version 0.03 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-05.
 
 =head1 SYNOPSIS
 
@@ -272,7 +273,7 @@ Print all words matching /foo/ or /bar/.
 Select a specific wordlist (multiple -w allowed).
 
 
- wordlist( arg => ["/fof[aeiou]/"]);
+ wordlist( arg => ["'/fof[aeiou]/'"]);
 
 
 Filter by regex.

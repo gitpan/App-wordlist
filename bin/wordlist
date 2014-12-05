@@ -3,8 +3,8 @@
 # Note: This script is a CLI interface to Riap function /App/wordlist/wordlist
 # and generated automatically using Dist::Zilla::Plugin::Rinci::ScriptFromFunc version 0.03
 
-our $DATE = '2014-12-04'; # DATE
-our $VERSION = '0.02'; # VERSION
+our $DATE = '2014-12-05'; # DATE
+our $VERSION = '0.03'; # VERSION
 
 use 5.010001;
 use strict;
@@ -31,7 +31,7 @@ wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.02 of wordlist (from Perl distribution App-wordlist), released on 2014-12-04.
+This document describes version 0.03 of wordlist (from Perl distribution App-wordlist), released on 2014-12-05.
 
 =head1 SYNOPSIS
 
@@ -47,19 +47,19 @@ By default print all words from all wordlists:
 
 Print all words matching /foo/ and /bar/:
 
- % wordlist
+ % wordlist foo bar
 
 Print all words matching /foo/ or /bar/:
 
- % wordlist
+ % wordlist --or foo bar
 
 Select a specific wordlist (multiple -w allowed):
 
- % wordlist
+ % wordlist -w KBBI foo
 
 Filter by regex:
 
- % wordlist
+ % wordlist '/fof[aeiou]/'
 
 =head1 OPTIONS
 
@@ -159,19 +159,11 @@ Can be specified multiple times.
 
 Install Games::Word::Wordlist::* module.
 
-Valid values:
-
- ["list_cpan", "list_installed", "install", "uninstall", "grep"]
-
 See C<--action>.
 
 =item B<-L>
 
 List Games::Word::Wordlist::* modules on CPAN.
-
-Valid values:
-
- ["list_cpan", "list_installed", "install", "uninstall", "grep"]
 
 See C<--action>.
 
@@ -179,19 +171,11 @@ See C<--action>.
 
 List installed Games::Word::Wordlist::* modules.
 
-Valid values:
-
- ["list_cpan", "list_installed", "install", "uninstall", "grep"]
-
 See C<--action>.
 
 =item B<-U>=I<s>
 
 Uninstall Games::Word::Wordlist::* module.
-
-Valid values:
-
- ["list_cpan", "list_installed", "install", "uninstall", "grep"]
 
 See C<--action>.
 
