@@ -26,7 +26,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=App-wordlist
   homepage: https://metacpan.org/release/App-wordlist
   repository: git://github.com/perlancar/perl-App-wordlist.git
-version: '0.03'
+version: '0.04'
 x_Dist_Zilla:
   perl:
     version: '5.018002'
@@ -130,7 +130,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::OurDate
       name: '@Author::PERLANCAR/OurDate'
-      version: '0.01'
+      version: '0.02'
     -
       class: Dist::Zilla::Plugin::PodWeaver
       config:
@@ -186,7 +186,7 @@ x_Dist_Zilla:
             -
               class: Pod::Weaver::Plugin::Rinci
               name: '@Author::PERLANCAR/Rinci'
-              version: '0.21'
+              version: '0.23'
             -
               class: Pod::Weaver::Section::Leftovers
               name: '@Author::PERLANCAR/Leftovers'
@@ -198,11 +198,11 @@ x_Dist_Zilla:
             -
               class: Pod::Weaver::Section::Completion::GetoptLongComplete
               name: '@Author::PERLANCAR/Completion::GetoptLongComplete'
-              version: '0.04'
+              version: '0.05'
             -
               class: Pod::Weaver::Section::Completion::PerinciCmdLine
               name: '@Author::PERLANCAR/Completion::PerinciCmdLine'
-              version: '0.07'
+              version: '0.08'
             -
               class: Pod::Weaver::Section::Homepage::DefaultCPAN
               name: '@Author::PERLANCAR/Homepage::DefaultCPAN'

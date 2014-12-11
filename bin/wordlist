@@ -3,8 +3,8 @@
 # Note: This script is a CLI interface to Riap function /App/wordlist/wordlist
 # and generated automatically using Dist::Zilla::Plugin::Rinci::ScriptFromFunc version 0.03
 
-our $DATE = '2014-12-05'; # DATE
-our $VERSION = '0.03'; # VERSION
+our $DATE = '2014-12-11'; # DATE
+our $VERSION = '0.04'; # VERSION
 
 use 5.010001;
 use strict;
@@ -31,7 +31,7 @@ wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.03 of wordlist (from Perl distribution App-wordlist), released on 2014-12-05.
+This document describes version 0.04 of wordlist (from Perl distribution App-wordlist), released on 2014-12-11.
 
 =head1 SYNOPSIS
 
@@ -110,6 +110,12 @@ Show help message.
 =item B<--json>
 
 Set output format to json.
+
+=item B<--len>=I<i>
+
+=item B<--maxlen>=I<i>
+
+=item B<--minlen>=I<i>
 
 =item B<--naked-res>
 
@@ -199,7 +205,7 @@ To activate bash completion for this script, put:
 
 in your bash startup (e.g. C<~/.bashrc>). Your next shell session will then recognize tab completion for the command. Or, you can also directly execute the line above in your shell to activate immediately.
 
-You can also install L<App::BashCompletionProg> which makes it easy to add completion for Perinci::CmdLine-based scripts. After you install the module and put C<. ~/.bash-complete-prog> (or C<. /etc/bash-complete-prog>), you can just run C<bash-completion-prog> and the C<complete> command will be added to your C<~/.bash-completion-prog>. Your next shell session will then recognize tab completion for the command.
+You can also install L<App::BashCompletionProg> which makes it easy to add completion for Getopt::Long::Complete-based scripts. After you install the module and put C<. ~/.bash-complete-prog> (or C<. /etc/bash-complete-prog>), you can just run C<bash-completion-prog> and the C<complete> command will be added to your C<~/.bash-completion-prog>. Your next shell session will then recognize tab completion for the command.
 
 =head2 fish
 

@@ -1,5 +1,12 @@
 Revision history for App-wordlist
 
+0.04    2014-12-11 (PERLANCAR)
+
+	- Add options: --len, --minlen, --maxlen.
+
+	- [ux] Don't show border for list action without detail.
+
+
 0.03    2014-12-05 (PERLANCAR)
 
 	- [ux] Don't show border when grepping, but still show border as

@@ -1,7 +1,7 @@
 package App::wordlist;
 
-our $DATE = '2014-12-05'; # DATE
-our $VERSION = '0.03'; # VERSION
+our $DATE = '2014-12-11'; # DATE
+our $VERSION = '0.04'; # VERSION
 
 use 5.010001;
 use strict;
@@ -48,6 +48,15 @@ $SPEC{wordlist} = {
         ignore_case => {
             schema  => 'bool',
             default => 1,
+        },
+        len => {
+            schema  => 'int*',
+        },
+        minlen => {
+            schema  => 'int*',
+        },
+        maxlen => {
+            schema  => 'int*',
         },
         wordlist => {
             schema => ['array*' => of => 'str*'],
@@ -159,6 +168,14 @@ sub wordlist {
             $obj->each_word(
                 sub {
                     my $word = shift;
+
+                    return if defined($args{len}) &&
+                        length($word) != $args{len};
+                    return if defined($args{minlen}) &&
+                        length($word) < $args{minlen};
+                    return if defined($args{maxlen}) &&
+                        length($word) > $args{maxlen};
+
                     my $cmpword = $ci ? lc($word) : $word;
                     for (@$arg) {
                         my $match =
@@ -198,7 +215,8 @@ sub wordlist {
                 push @res, $_;
             }
         }
-        [200, "OK", \@res, {'cmdline.default_format' => 'text'}];
+        [200, "OK", \@res,
+         {('cmdline.default_format' => 'text') x !!$args{detail}}];
 
     } elsif ($action eq 'list_cpan') {
 
@@ -234,7 +252,7 @@ App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.03 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-05.
+This document describes version 0.04 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-11.
 
 =head1 SYNOPSIS
 
@@ -293,6 +311,12 @@ Display more information when listing modules.
 
 =item * B<ignore_case> => I<bool> (default: 1)
 
+=item * B<len> => I<int>
+
+=item * B<maxlen> => I<int>
+
+=item * B<minlen> => I<int>
+
 =item * B<or> => I<bool>
 
 Use OR logic instead of the default AND.
@@ -319,8 +343,6 @@ that contains extra information.
 =head1 TODO
 
 In -l --detail, show summary (extract from POD Name or # ABSTRACT).
-
-Support Games::Word::Phraselist::*
 
 Option --random (plus -n) to generate (or n) random word(s).
 

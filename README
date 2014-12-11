@@ -2,8 +2,8 @@ NAME
     App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 VERSION
-    This document describes version 0.03 of App::wordlist (from Perl
-    distribution App-wordlist), released on 2014-12-05.
+    This document describes version 0.04 of App::wordlist (from Perl
+    distribution App-wordlist), released on 2014-12-11.
 
 SYNOPSIS
     See the included script wordlist.
@@ -46,6 +46,12 @@ FUNCTIONS
 
     *   ignore_case => *bool* (default: 1)
 
+    *   len => *int*
+
+    *   maxlen => *int*
+
+    *   minlen => *int*
+
     *   or => *bool*
 
         Use OR logic instead of the default AND.
@@ -69,8 +75,6 @@ FUNCTIONS
 
 TODO
     In -l --detail, show summary (extract from POD Name or # ABSTRACT).
-
-    Support Games::Word::Phraselist::*
 
     Option --random (plus -n) to generate (or n) random word(s).
 
