@@ -26,7 +26,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=App-wordlist
   homepage: https://metacpan.org/release/App-wordlist
   repository: git://github.com/perlancar/perl-App-wordlist.git
-version: '0.04'
+version: '0.05'
 x_Dist_Zilla:
   perl:
     version: '5.018002'
@@ -104,6 +104,14 @@ x_Dist_Zilla:
       name: '@Author::PERLANCAR/@Filter/UploadToCPAN'
       version: '5.025'
     -
+      class: Dist::Zilla::Plugin::Rinci::AbstractFromMeta
+      name: '@Author::PERLANCAR/Rinci::AbstractFromMeta'
+      version: '0.02'
+    -
+      class: Dist::Zilla::Plugin::PodnameFromFilename
+      name: '@Author::PERLANCAR/PodnameFromFilename'
+      version: '0.01'
+    -
       class: Dist::Zilla::Plugin::PERLANCAR::MetaResources
       name: '@Author::PERLANCAR/PERLANCAR::MetaResources'
       version: '0.03'
@@ -124,9 +132,9 @@ x_Dist_Zilla:
       name: '@Author::PERLANCAR/MetaConfig'
       version: '5.025'
     -
-      class: Dist::Zilla::Plugin::Rinci::InstallCompletion
-      name: '@Author::PERLANCAR/Rinci::InstallCompletion'
-      version: '0.03'
+      class: Dist::Zilla::Plugin::GenShellCompletion
+      name: '@Author::PERLANCAR/GenShellCompletion'
+      version: '0.05'
     -
       class: Dist::Zilla::Plugin::OurDate
       name: '@Author::PERLANCAR/OurDate'

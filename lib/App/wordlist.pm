@@ -1,7 +1,7 @@
 package App::wordlist;
 
-our $DATE = '2014-12-11'; # DATE
-our $VERSION = '0.04'; # VERSION
+our $DATE = '2014-12-16'; # DATE
+our $VERSION = '0.05'; # VERSION
 
 use 5.010001;
 use strict;
@@ -52,10 +52,10 @@ $SPEC{wordlist} = {
         len => {
             schema  => 'int*',
         },
-        minlen => {
+        min_len => {
             schema  => 'int*',
         },
-        maxlen => {
+        max_len => {
             schema  => 'int*',
         },
         wordlist => {
@@ -171,10 +171,10 @@ sub wordlist {
 
                     return if defined($args{len}) &&
                         length($word) != $args{len};
-                    return if defined($args{minlen}) &&
-                        length($word) < $args{minlen};
-                    return if defined($args{maxlen}) &&
-                        length($word) > $args{maxlen};
+                    return if defined($args{min_len}) &&
+                        length($word) < $args{min_len};
+                    return if defined($args{max_len}) &&
+                        length($word) > $args{max_len};
 
                     my $cmpword = $ci ? lc($word) : $word;
                     for (@$arg) {
@@ -252,7 +252,7 @@ App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.04 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-11.
+This document describes version 0.05 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-16.
 
 =head1 SYNOPSIS
 
@@ -313,9 +313,9 @@ Display more information when listing modules.
 
 =item * B<len> => I<int>
 
-=item * B<maxlen> => I<int>
+=item * B<max_len> => I<int>
 
-=item * B<minlen> => I<int>
+=item * B<min_len> => I<int>
 
 =item * B<or> => I<bool>
 

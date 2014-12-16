@@ -1,5 +1,11 @@
 Revision history for App-wordlist
 
+0.05    2014-12-16 (PERLANCAR)
+
+	- [Incompatible change] Rename --{min,max}len to --{min,max}-len to
+	  be consistent with my other namings.
+
+
 0.04    2014-12-11 (PERLANCAR)
 
 	- Add options: --len, --minlen, --maxlen.

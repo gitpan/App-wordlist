@@ -2,8 +2,8 @@ NAME
     App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 VERSION
-    This document describes version 0.04 of App::wordlist (from Perl
-    distribution App-wordlist), released on 2014-12-11.
+    This document describes version 0.05 of App::wordlist (from Perl
+    distribution App-wordlist), released on 2014-12-16.
 
 SYNOPSIS
     See the included script wordlist.
@@ -48,9 +48,9 @@ FUNCTIONS
 
     *   len => *int*
 
-    *   maxlen => *int*
+    *   max_len => *int*
 
-    *   minlen => *int*
+    *   min_len => *int*
 
     *   or => *bool*
 
