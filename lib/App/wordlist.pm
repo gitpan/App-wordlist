@@ -1,7 +1,7 @@
 package App::wordlist;
 
 our $DATE = '2014-12-18'; # DATE
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 use 5.010001;
 use strict;
@@ -252,7 +252,7 @@ App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.06 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-18.
+This document describes version 0.07 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-18.
 
 =head1 SYNOPSIS
 

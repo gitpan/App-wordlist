@@ -1,5 +1,13 @@
 Revision history for App-wordlist
 
+0.07    2014-12-18 (PERLANCAR)
+
+	- No functional changes.
+
+	- [dist] Let's try again adding Complete::Util as prereq on
+	  Windows.
+
+
 0.06    2014-12-18 (PERLANCAR)
 
 	- No functional changes.
