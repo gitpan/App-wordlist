@@ -1,7 +1,7 @@
 package App::wordlist;
 
 our $DATE = '2014-12-18'; # DATE
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 use 5.010001;
 use strict;
@@ -113,22 +113,27 @@ $SPEC{wordlist} = {
         {
             argv => [],
             summary => 'By default print all words from all wordlists',
+            test => 0,
         },
         {
             argv => [qw/foo bar/],
             summary => 'Print all words matching /foo/ and /bar/',
+            test => 0,
         },
         {
             argv => [qw/--or foo bar/],
             summary => 'Print all words matching /foo/ or /bar/',
+            test => 0,
         },
         {
             argv => [qw/-w KBBI foo/],
             summary => 'Select a specific wordlist (multiple -w allowed)',
+            test => 0,
         },
         {
             argv => [qw|/fof[aeiou]/|],
             summary => 'Filter by regex',
+            test => 0,
         },
     ],
     'cmdline.default_format' => 'text-simple',
@@ -252,7 +257,7 @@ App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.07 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-18.
+This document describes version 0.08 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-18.
 
 =head1 SYNOPSIS
 
