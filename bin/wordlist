@@ -3,8 +3,8 @@
 # Note: This script is a CLI interface to Riap function /App/wordlist/wordlist
 # and generated automatically using Dist::Zilla::Plugin::Rinci::ScriptFromFunc version 0.03
 
-our $DATE = '2014-12-16'; # DATE
-our $VERSION = '0.05'; # VERSION
+our $DATE = '2014-12-18'; # DATE
+our $VERSION = '0.06'; # VERSION
 
 use 5.010001;
 use strict;
@@ -31,7 +31,7 @@ wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.05 of wordlist (from Perl distribution App-wordlist), released on 2014-12-16.
+This document describes version 0.06 of wordlist (from Perl distribution App-wordlist), released on 2014-12-18.
 
 =head1 SYNOPSIS
 
@@ -167,15 +167,15 @@ Install Games::Word::Wordlist::* module.
 
 See C<--action>.
 
-=item B<-L>
-
-List Games::Word::Wordlist::* modules on CPAN.
-
-See C<--action>.
-
 =item B<-l>
 
 List installed Games::Word::Wordlist::* modules.
+
+See C<--action>.
+
+=item B<-L>
+
+List Games::Word::Wordlist::* modules on CPAN.
 
 See C<--action>.
 

@@ -3,7 +3,7 @@
    "author" : [
       "perlancar <perlancar@cpan.org>"
    ],
-   "dynamic_config" : 0,
+   "dynamic_config" : 1,
    "generated_by" : "Dist::Zilla version 5.025, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "perl_5"
@@ -29,7 +29,6 @@
       },
       "runtime" : {
          "requires" : {
-            "Complete::Util" : "0",
             "Module::List" : "0",
             "Perinci::CmdLine::Any" : "0.06",
             "Rinci" : "v1.1.69",
@@ -57,7 +56,7 @@
          "web" : "https://github.com/perlancar/perl-App-wordlist"
       }
    },
-   "version" : "0.05",
+   "version" : "0.06",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018002"
@@ -157,7 +156,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Rinci::AbstractFromMeta",
             "name" : "@Author::PERLANCAR/Rinci::AbstractFromMeta",
-            "version" : "0.02"
+            "version" : "0.06"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodnameFromFilename",
@@ -266,7 +265,7 @@
                      {
                         "class" : "Pod::Weaver::Plugin::Rinci",
                         "name" : "@Author::PERLANCAR/Rinci",
-                        "version" : "0.23"
+                        "version" : "0.24"
                      },
                      {
                         "class" : "Pod::Weaver::Section::Leftovers",
@@ -391,6 +390,16 @@
             },
             "name" : "Prereqs",
             "version" : "5.025"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::OSPrereqs::Unix",
+            "config" : {
+               "Dist::Zilla::Plugin::OSPrereqs" : {
+                  "os" : "~^(aix|cygwin|darwin|dragonfly|freebsd|gnukfreebsd|hpux|interix|irix|linux|midnightbsd|minix|mirbsd|netbsd|openbsd|sco|solaris)$"
+               }
+            },
+            "name" : "OSPrereqs::Unix",
+            "version" : "0.01"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

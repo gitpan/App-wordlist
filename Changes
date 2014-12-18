@@ -1,5 +1,14 @@
 Revision history for App-wordlist
 
+0.06    2014-12-18 (PERLANCAR)
+
+	- No functional changes.
+
+	- [dzil] Make Complete::Util prereq for unix only for now,
+	  Complete::Util doesn't pass test on Windows, ref:
+	  http://blog.nu42.com/2014/12/when-bits-dont-stick.html.
+
+
 0.05    2014-12-16 (PERLANCAR)
 
 	- [Incompatible change] Rename --{min,max}len to --{min,max}-len to

@@ -9,7 +9,7 @@ build_requires:
   Test::More: '0'
 configure_requires:
   ExtUtils::MakeMaker: '0'
-dynamic_config: 0
+dynamic_config: 1
 generated_by: 'Dist::Zilla version 5.025, CPAN::Meta::Converter version 2.143240'
 license: perl
 meta-spec:
@@ -17,7 +17,6 @@ meta-spec:
   version: '1.4'
 name: App-wordlist
 requires:
-  Complete::Util: '0'
   Module::List: '0'
   Perinci::CmdLine::Any: '0.06'
   Rinci: v1.1.69
@@ -26,7 +25,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=App-wordlist
   homepage: https://metacpan.org/release/App-wordlist
   repository: git://github.com/perlancar/perl-App-wordlist.git
-version: '0.05'
+version: '0.06'
 x_Dist_Zilla:
   perl:
     version: '5.018002'
@@ -106,7 +105,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Rinci::AbstractFromMeta
       name: '@Author::PERLANCAR/Rinci::AbstractFromMeta'
-      version: '0.02'
+      version: '0.06'
     -
       class: Dist::Zilla::Plugin::PodnameFromFilename
       name: '@Author::PERLANCAR/PodnameFromFilename'
@@ -194,7 +193,7 @@ x_Dist_Zilla:
             -
               class: Pod::Weaver::Plugin::Rinci
               name: '@Author::PERLANCAR/Rinci'
-              version: '0.23'
+              version: '0.24'
             -
               class: Pod::Weaver::Section::Leftovers
               name: '@Author::PERLANCAR/Leftovers'
@@ -290,6 +289,13 @@ x_Dist_Zilla:
           type: requires
       name: Prereqs
       version: '5.025'
+    -
+      class: Dist::Zilla::Plugin::OSPrereqs::Unix
+      config:
+        Dist::Zilla::Plugin::OSPrereqs:
+          os: '~^(aix|cygwin|darwin|dragonfly|freebsd|gnukfreebsd|hpux|interix|irix|linux|midnightbsd|minix|mirbsd|netbsd|openbsd|sco|solaris)$'
+      name: OSPrereqs::Unix
+      version: '0.01'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
