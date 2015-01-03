@@ -1,7 +1,7 @@
 package App::wordlist;
 
-our $DATE = '2014-12-18'; # DATE
-our $VERSION = '0.09'; # VERSION
+our $DATE = '2015-01-03'; # DATE
+our $VERSION = '0.10'; # VERSION
 
 use 5.010001;
 use strict;
@@ -257,7 +257,7 @@ App::wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.09 of App::wordlist (from Perl distribution App-wordlist), released on 2014-12-18.
+This document describes version 0.10 of App::wordlist (from Perl distribution App-wordlist), released on 2015-01-03.
 
 =head1 SYNOPSIS
 
@@ -308,7 +308,7 @@ Arguments ('*' denotes required arguments):
 
 =item * B<action> => I<str> (default: "grep")
 
-=item * B<arg> => I<array>
+=item * B<arg> => I<array[str]>
 
 =item * B<detail> => I<bool>
 
@@ -326,13 +326,11 @@ Display more information when listing modules.
 
 Use OR logic instead of the default AND.
 
-=item * B<wordlist> => I<array>
+=item * B<wordlist> => I<array[str]>
 
 Select one or more wordlist modules.
 
 =back
-
-Return value:
 
 Returns an enveloped result (an array).
 
@@ -343,18 +341,7 @@ First element (status) is an integer containing HTTP status code
 element (meta) is called result metadata and is optional, a hash
 that contains extra information.
 
- (any)
-
-=head1 TODO
-
-In -l --detail, show summary (extract from POD Name or # ABSTRACT).
-
-Option --random (plus -n) to generate (or n) random word(s).
-
-Option -v (--invert-match) like grep.
-
-Implement -n (max result).
-
+Return value:  (any)
 =head1 SEE ALSO
 
 L<Games::Word::Wordlist>
@@ -383,7 +370,7 @@ perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by perlancar@cpan.org.
+This software is copyright (c) 2015 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,10 +1,10 @@
 #!perl
 
 # Note: This script is a CLI interface to Riap function /App/wordlist/wordlist
-# and generated automatically using Dist::Zilla::Plugin::Rinci::ScriptFromFunc version 0.03
+# and generated automatically using Dist::Zilla::Plugin::Rinci::ScriptFromFunc version 0.04
 
-our $DATE = '2014-12-18'; # DATE
-our $VERSION = '0.09'; # VERSION
+our $DATE = '2015-01-03'; # DATE
+our $VERSION = '0.10'; # VERSION
 
 use 5.010001;
 use strict;
@@ -31,7 +31,7 @@ wordlist - Grep words from Games::Word::{Wordlist,Phraselist}::*
 
 =head1 VERSION
 
-This document describes version 0.09 of wordlist (from Perl distribution App-wordlist), released on 2014-12-18.
+This document describes version 0.10 of wordlist (from Perl distribution App-wordlist), released on 2015-01-03.
 
 =head1 SYNOPSIS
 
@@ -101,11 +101,11 @@ Display more information when listing modules.
 
 =item B<--format>=I<s>
 
-Set output format.
+Choose output format, e.g. json, text.
 
 =item B<--help>, B<-h>, B<-?>
 
-Show help message.
+Display this help message.
 
 =item B<--json>
 
@@ -128,11 +128,10 @@ By default, when outputing as JSON, the full enveloped result is returned, e.g.:
 The reason is so you can get the status (1st element), status message (2nd
 element) as well as result metadata/extra result (4th element) instead of just
 the result (3rd element). However, sometimes you want just the result, e.g. when
-you want to pipe the result for more post-processing:
+you want to pipe the result for more post-processing. In this case you can use
+`--naked-res` so you just get:
 
     [1,2,3]
-
-In this case, you can use `--naked-res`.
 
 
 =item B<--no-config>
@@ -146,8 +145,6 @@ Do not use any configuration file.
 Use OR logic instead of the default AND.
 
 =item B<--version>, B<-v>
-
-Show program version.
 
 =item B<--wordlist-json>=I<s>, B<-w>
 
@@ -243,7 +240,7 @@ perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by perlancar@cpan.org.
+This software is copyright (c) 2015 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
